@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountryDetailsActivity">
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/CountyChart"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Total Cases"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CountyChart" />
+
+    <TextView
+        android:id="@+id/active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Active"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cases" />
+
+    <TextView
+        android:id="@+id/death"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Total death"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/active" />
+
+    <TextView
+        android:id="@+id/recovered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Total Recovered"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/death" />
+
+    <TextView
+        android:id="@+id/todayCases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Today cases"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recovered" />
+
+    <TextView
+        android:id="@+id/todayDeath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Today Death"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todayCases" />
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Total Tests"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todayDeath" />
+
+    <TextView
+        android:id="@+id/critical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Critical Cases"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/test" />
+
+    <TextView
+        android:id="@+id/CasesNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/cases"
+        app:layout_constraintTop_toBottomOf="@+id/CountyChart" />
+
+    <TextView
+        android:id="@+id/ActiveNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/active"
+        android:textAlignment="textStart"
+        app:layout_constraintTop_toBottomOf="@+id/CasesNumber" />
+
+    <TextView
+        android:id="@+id/TotalDeathNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/death"
+        app:layout_constraintTop_toBottomOf="@+id/ActiveNumber" />
+
+    <TextView
+        android:id="@+id/RecoveredNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/recovered"
+        android:textAlignment="textStart"
+        app:layout_constraintTop_toBottomOf="@+id/TotalDeathNumber" />
+
+    <TextView
+        android:id="@+id/TodayCasesNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/todayCases"
+        app:layout_constraintTop_toBottomOf="@+id/RecoveredNumber" />
+
+    <TextView
+        android:id="@+id/TodayDeathNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/todayDeath"
+        app:layout_constraintTop_toBottomOf="@+id/TodayCasesNumber" />
+
+    <TextView
+        android:id="@+id/TestNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/test"
+        android:textAlignment="textStart"
+        app:layout_constraintTop_toBottomOf="@+id/TodayDeathNumber" />
+
+    <TextView
+        android:id="@+id/CriticalNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@+id/critical"
+        app:layout_constraintTop_toBottomOf="@+id/TestNumber" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
