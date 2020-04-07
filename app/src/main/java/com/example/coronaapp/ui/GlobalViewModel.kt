@@ -1,21 +1,25 @@
-package com.example.coronaapp
+package com.example.coronaapp.ui
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.coronaapp.network.CoronaApi
+import com.example.coronaapp.network.AllCountries
+import com.example.coronaapp.network.GlobalTotal
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
-class MainViewModel:ViewModel() {
+class GlobalViewModel:ViewModel() {
     private val _response = MutableLiveData<GlobalTotal>()
     val response: LiveData<GlobalTotal>
         get() = _response
+
+    private val _loading = MutableLiveData<Boolean>()
+    val loading : LiveData <Boolean>
+    get() = _loading
 
     private val _countries = MutableLiveData<List<AllCountries>>()
     val countries: LiveData<List<AllCountries>>
@@ -38,11 +42,10 @@ class MainViewModel:ViewModel() {
             try {
                 val totalCases = getCountries.await()
                 _countries.value = totalCases
-                Log.d("apiSuccess",_countries.value.toString())
+                _loading.value = false
             }
             catch (e:Exception){
-                Log.d("api","error")
-                print("Error")
+                _loading.value=true
             }
         }
     }
@@ -52,11 +55,9 @@ class MainViewModel:ViewModel() {
             try {
                 val totalCases = getCases.await()
                 _response.value = totalCases
-                Log.d("apiSuccess",_response.value.toString())
             }
             catch (e:Exception){
-                Log.d("api","error")
-                print("Error")
+
             }
         }
     }

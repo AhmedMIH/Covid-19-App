@@ -1,4 +1,4 @@
-package com.example.coronaapp
+package com.example.coronaapp.network
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

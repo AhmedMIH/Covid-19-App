@@ -1,4 +1,4 @@
-package com.example.coronaapp
+package com.example.coronaapp.network
 
 import com.squareup.moshi.Json
 data class GlobalTotal (

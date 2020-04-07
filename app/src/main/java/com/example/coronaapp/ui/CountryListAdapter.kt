@@ -1,4 +1,4 @@
-package com.example.coronaapp
+package com.example.coronaapp.ui
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.coronaapp.R
+import com.example.coronaapp.network.AllCountries
 
 
 class CountryListAdapter(var context: Context,var countryList: List<AllCountries>) :
@@ -59,7 +61,7 @@ class CountryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         countryDetails.add(country.critical.toString())
 
 
-        val i =Intent(context,CountryDetailsActivity::class.java)
+        val i =Intent(context, CountryDetailsActivity::class.java)
         i.putExtra("CountryDetails",countryDetails)
         context.startActivity(i)
     }
